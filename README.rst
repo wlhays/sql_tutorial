@@ -1,7 +1,7 @@
 SQL Tutorial
 ============
 
-A quick hands-on tutorial for relational databases and SQL using SQLite
+A quick hands-on introduction to relational databases and SQL using SQLite
 at the command-line.
 It uses an incremental approach to learning the SQL syntax in a series of
 lessons with a small amount of sample data.
@@ -9,7 +9,7 @@ lessons with a small amount of sample data.
 Lesson topics
 -------------
 
-`**part 1** <sql_tutorial_1.rst>`_
+` part 1 <sql_tutorial_1.rst>`_
 
 * SQLite basics
 * CREATE TABLE
@@ -18,18 +18,24 @@ Lesson topics
 * DELETE
 * SELECT
 
-**part 2**
+` part 2 <sql_tutorial_2.rst>`_
 
 * PRIMARY KEY
 * FOREIGN KEY
 * INNER JOINS
 
-`**part 3**  <sql_tutorial_3.rst>`_
+` part 3  <sql_tutorial_3.rst>`_
 
-* Aliases
-* Ordering
-* Counting
+* AS (Aliases)
+* ORDER BY
+* COUNT, AVG, MIN, MAX
 * GROUP BY
+* VIEW
+
+part 4
+
+* SELF JOINS
+* Subqueries
 
 License
 =======

@@ -9,7 +9,7 @@ lessons with a small amount of sample data.
 Lesson topics
 -------------
 
-` part 1 <sql_tutorial_1.rst>`_
+`part 1 <sql_tutorial_1.rst>`_
 
 * SQLite basics
 * CREATE TABLE
@@ -18,13 +18,13 @@ Lesson topics
 * DELETE
 * SELECT
 
-` part 2 <sql_tutorial_2.rst>`_
+`part 2 <sql_tutorial_2.rst>`_
 
 * PRIMARY KEY
 * FOREIGN KEY
 * INNER JOINS
 
-` part 3  <sql_tutorial_3.rst>`_
+`part 3  <sql_tutorial_3.rst>`_
 
 * AS (Aliases)
 * ORDER BY

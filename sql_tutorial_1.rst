@@ -95,6 +95,10 @@ Pull just the rows with type 'action figure'::
 
     sqlite>SELECT * FROM toys WHERE type = 'action figure';
 
+Use 'IN' in the WHERE clause when values can match multiples::
+
+    sqlite>SELECT * FROM toys WHERE type IN ('action figure', 'device');
+
 Change the comment field for Buzz.  The *id* is usually the only unique
 identifier for each row.::
 

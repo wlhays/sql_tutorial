@@ -32,9 +32,9 @@ Lesson topics
 * GROUP BY
 * VIEW
 
-part 4
+`part 4  <sql_tutorial_4.rst>`_
 
-* SELF JOINS
+* Self joins
 * Subqueries
 
 License

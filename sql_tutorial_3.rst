@@ -29,7 +29,7 @@ for this tutorial and download the accompanying files:
 
 Start sqlite and you will see the SQLite prompt.
 Create a new database, load the data and save
-under the name "racetime" as follows::
+under the name "racetimes" as follows::
 
  sqlite>.open --new
   sqlite>.read sqlite_tut_pt3_ddl.sql
@@ -37,14 +37,14 @@ under the name "racetime" as follows::
   sqlite>.import races.csv races
   sqlite>.import runners.csv runners
   sqlite>.import times.csv times
-  sqlite>.save racetime
+  sqlite>.save racetimes
 
 Improved formatting for the command line output::
 
  sqlite>.headers on
   sqlite>.mode column
 
-For future use, save these two lines in a file called **.sqliterc**
+For future use, save these two lines in a resource file called **.sqliterc**
 in your home directory.
 
 Check each of the tables::
@@ -114,7 +114,7 @@ qualifiers ASC or DESC for **ascending** (the default) or **descending**::
               races.distance_km AS km, times.time
        FROM runners, races, times
        WHERE times.runner_id = runners.id AND times.race_id = races.id
-       ORDER BY runner;
+       ORDER BY runner ASC;
 
    runner      race           km          time
    ----------  -------------  ----------  ----------

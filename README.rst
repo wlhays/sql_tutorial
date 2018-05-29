@@ -30,12 +30,14 @@ Lesson topics
 * ORDER BY
 * COUNT, AVG, MIN, MAX
 * GROUP BY
-* VIEW
+* CREATE VIEW
 
 `part 4  <sql_tutorial_4.rst>`_
 
 * Self joins
 * Subqueries
+* CREATE INDEX
+* DROP TABLE
 
 License
 =======

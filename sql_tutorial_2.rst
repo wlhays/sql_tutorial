@@ -45,10 +45,11 @@ database applications. In this case, if an attempt is made to insert a row
 where the 'hemisphere' field is not either 'EAST' or 'WEST' then it will
 fail.::
 
-    sqlite>INSERT INTO continent VALUES (1, 'Africa', 'EAST', 30300000);
-    sqlite>INSERT INTO continent VALUES (2, 'Antarctica', 'EAST', 14000000);
-    sqlite>INSERT INTO continent VALUES (3, 'Asia', 'EAST', 44579000);
-    sqlite>INSERT INTO continent VALUES (4, 'Europe', 'EAST', 10180000);
+    sqlite>INSERT INTO continent VALUES
+     (1, 'Africa', 'EAST', 30300000),
+     (2, 'Antarctica', 'EAST', 14000000),
+     (3, 'Asia', 'EAST', 44579000),
+     (4, 'Europe', 'EAST', 10180000);
 
     sqlite>CREATE TABLE country (
        id            integer  PRIMARY KEY,
@@ -61,11 +62,12 @@ fail.::
 The last line 'FOREIGN KEY ...' is the means to join tables by
 referencing another table using its primary key column.::
 
-    sqlite>INSERT INTO country VALUES (1, 4, 'France', 643801);
-    sqlite>INSERT INTO country VALUES (2, 4, 'Italy',  301338);
-    sqlite>INSERT INTO country VALUES (3, 4, 'Spain',  505990);
-    sqlite>INSERT INTO country VALUES (4, 1, 'Kenya',  581309);
-    sqlite>INSERT INTO country VALUES (5, 3, 'Japan',  377972);
+    sqlite>INSERT INTO country VALUES
+     (1, 4, 'France', 643801),
+     (2, 4, 'Italy',  301338),
+     (3, 4, 'Spain',  505990),
+     (4, 1, 'Kenya',  581309),
+     (5, 3, 'Japan',  377972);
 
 Now we can query the related tables.
 First, a shorthand version of a join query where the joined fields area
@@ -98,13 +100,14 @@ Another hierarchical level in our geographical data model::
        FOREIGN KEY(country_id) REFERENCES country(id)
     );
 
-    sqlite>INSERT INTO city VALUES (1, 1, 'Paris',   2206500);
-    sqlite>INSERT INTO city VALUES (2, 2, 'Milan',   1363180);
-    sqlite>INSERT INTO city VALUES (3, 2, 'Napoli',  3115320);
-    sqlite>INSERT INTO city VALUES (4, 4, 'Nairobi', 6548000);
-    sqlite>INSERT INTO city VALUES (5, 5, 'Tokyo',   9000000);
-    sqlite>INSERT INTO city VALUES (6, 3, 'Madrid',  3166000);
-    sqlite>INSERT INTO city VALUES (7, 3, 'Cádiz',    124000);
+    sqlite>INSERT INTO city VALUES
+     (1, 1, 'Paris',   2206500),
+     (2, 2, 'Milan',   1363180),
+     (3, 2, 'Napoli',  3115320),
+     (4, 4, 'Nairobi', 6548000),
+     (5, 5, 'Tokyo',   9000000),
+     (6, 3, 'Madrid',  3166000),
+     (7, 3, 'Cádiz',    124000);
 
 Retrieving data from the interrelated tables, this query uses two inner joins::
 

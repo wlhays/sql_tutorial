@@ -70,13 +70,13 @@ Each set of ids in the geo_entity table will be in a specific numeric range,
 since we can't reuse the ids as is when they are all moved into the same
 table.::
 
-    sqlite>INSERT INTO geo_entity (id, type_id, container_id, name)
+    sqlite>INSERT INTO geo_entity (id, geo_type_id, container_id, name)
            SELECT (1000 + id), 2, 1, name FROM continent;
 
-    sqlite>INSERT INTO geo_entity (id, type_id, container_id, name)
+    sqlite>INSERT INTO geo_entity (id, geo_type_id, container_id, name)
            SELECT (2000 + id), 3, (1000 + continent_id), name FROM country;
 
-    sqlite>INSERT INTO geo_entity (id, type_id, container_id, name)
+    sqlite>INSERT INTO geo_entity (id, geo_type_id, container_id, name)
            SELECT (3000 + id), 6, (2000 + country_id), name FROM city;
 
 Replicate the join queries from the first version.
@@ -84,14 +84,14 @@ Using table name aliases is important when joining a table to itself.::
 
     sqlite>SELECT g1.name as 'country', g2.name as 'city'
            FROM geo_entity g1 JOIN geo_entity g2 ON (g2.container_id  = g1.id)
-           WHERE g2.type_id IN (6, 7);
+           WHERE g2.geo_type_id IN (6, 7);
 
 The same query but adding a bit of formatting to the output.
 The || is for concatenation.::
 
     sqlite>SELECT g2.name || ' (' || g1.name || ')' as 'city'
            FROM geo_entity g1 JOIN geo_entity g2 ON (g2.container_id  = g1.id)
-           WHERE g2.type_id IN (6, 7);
+           WHERE g2.geo_type_id IN (6, 7);
 
 Exercise:
 * Expand the last query with an additional join to include the continent
@@ -100,3 +100,22 @@ in the output.
 Exercise:
 * Redo the geo_entity table by adding columns for area and population.
   Then adjust the insert queries to pull that data from the original tables.
+
+As a practical matter for relational databases, indexes need
+to be created for the fields that are used as references, particularly
+PRIMARY KEY ids::
+
+    sqlite>CREATE INDEX idx_geo_type_pk ON geo_type(id);
+    sqlite>CREATE INDEX idx_geo_entity_pk ON geo_entity(id);
+
+In the event there is a need to remove a table, view or other elements
+in the database, a DROP statement is used.
+For the geodb, once the data has been migrated to the new
+geo_entity table we can safely remove the earlier tables.  Do this in
+a way that does not leave dangling references, i.e. in the reverse order
+from that of creation::
+
+    sqlite>DROP TABLE city;
+    sqlite>DROP TABLE country;
+    sqlite>DROP TABLE continent;
+    

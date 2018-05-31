@@ -71,7 +71,8 @@ referencing another table using its primary key column.::
 
 Now we can query the related tables.
 First, a shorthand version of a join query where the joined fields area
-equated in the WHERE clause::
+equated in the WHERE clause.  The two specified conditions are connected
+with an 'AND' requiring both conditions to be true.::
 
     sqlite>SELECT continent.name, country.name FROM continent, country
            WHERE country.continent_id = continent.id
@@ -84,9 +85,15 @@ The default join type is "INNER" so it is not required in queries.::
            ON (country.continent_id = continent.id)
            WHERE continent.hemisphere = 'EAST';
 
+SQL also has an 'OR' where at least one of the WHERE conditions must be true.
+Various combinations of conditions connected with 'AND' and 'OR' can be
+formulated, sometimes with parentheses to provide further structure.
+to provide string comparisons, use 'LIKE'.  In the comparison
+string, the special character '%' means 'any number of any characters'.::
+
     sqlite>SELECT continent.name, country.name FROM country JOIN continent
            ON (country.continent_id = continent.id)
-           WHERE continent.name LIKE 'A%' AND country.area > 400000;
+           WHERE continent.name LIKE 'A%' OR country.area > 400000;
 
 Exercise:  Find the average area of all the countries listed for Europe.
 

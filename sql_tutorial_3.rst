@@ -37,7 +37,7 @@ under the name "racetimes" as follows::
   sqlite>.import races.csv races
   sqlite>.import runners.csv runners
   sqlite>.import times.csv times
-  sqlite>.save racetimes
+  sqlite>.save racetimes_db
 
 Improved formatting for the command line output::
 

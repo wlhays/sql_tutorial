@@ -1,4 +1,4 @@
-
+.
 
 CREATE TABLE runners (
     id        integer  PRIMARY KEY,

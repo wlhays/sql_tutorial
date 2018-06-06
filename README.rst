@@ -1,8 +1,8 @@
-SQL Tutorial
-============
+A Minimalist SQL Tutorial
+=========================
 
 A quick hands-on introduction to relational databases and SQL using SQLite
-at the command-line.
+at the command-line and, in later lessons, Python.
 It uses an incremental approach to learning the SQL syntax in a series of
 lessons with a small amount of sample data.
 
@@ -38,6 +38,12 @@ Lesson topics
 * Subqueries
 * CREATE INDEX
 * DROP TABLE
+
+`Accessing SQLite with Python <sql_tutorial_python.rst>`_
+
+* Connections
+* Cursors
+* Transactions
 
 License
 =======

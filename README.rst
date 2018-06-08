@@ -45,6 +45,10 @@ Lesson topics
 * Cursors
 * Transactions
 
+`SQLite's JSON features <sql_tutorial_json.rst>`_
+
+* examples of most of the functionality as used in SQL statements
+
 License
 =======
 

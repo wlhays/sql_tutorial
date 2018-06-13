@@ -39,6 +39,15 @@ Lesson topics
 * CREATE INDEX
 * DROP TABLE
 
+`part 5  <sql_tutorial_5.rst>`_
+
+* datatypes, storage classes and affinities
+* loading cvs data using implicit autocommit
+* dates using ISO8601
+* temporary tables
+* CREATE TABLE AS
+* CREATE INDEX
+
 `Accessing SQLite with Python <sql_tutorial_python.rst>`_
 
 * Connections
